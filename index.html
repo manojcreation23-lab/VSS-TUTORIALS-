@@ -9,7 +9,8 @@
 body{
   margin:0;
   font-family:Arial;
-  background:#f5f7fb;
+  background:#ffffff;
+  color:#333;
 }
 
 /* NAVBAR */
@@ -18,27 +19,28 @@ nav{
   justify-content:space-between;
   padding:15px 30px;
   background:white;
-  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
 nav h2{color:#2563eb;margin:0;}
 nav a{text-decoration:none;color:#333;margin:0 10px;}
 
 /* HERO */
 .hero{
-  background:url('https://images.unsplash.com/photo-1588072432836-e10032774350') center/cover;
+  background:linear-gradient(135deg,#2563eb,#3b82f6);
   color:white;
   text-align:center;
   padding:120px 20px;
 }
-.hero h1{font-size:45px;}
-.hero p{font-size:18px;}
+.hero h1{font-size:45px;margin:0;}
+.hero p{font-size:18px;margin:15px 0;}
 
 .btn{
-  background:#2563eb;
-  color:white;
+  background:white;
+  color:#2563eb;
   padding:12px 25px;
-  border-radius:5px;
+  border-radius:6px;
   text-decoration:none;
+  font-weight:bold;
 }
 
 /* SECTION */
@@ -48,7 +50,10 @@ section{
   margin:auto;
 }
 
-h2{text-align:center;margin-bottom:30px;}
+h2{
+  text-align:center;
+  margin-bottom:30px;
+}
 
 /* GRID */
 .grid{
@@ -61,22 +66,25 @@ h2{text-align:center;margin-bottom:30px;}
 .card{
   background:white;
   padding:25px;
-  border-radius:10px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  border-radius:12px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.08);
   text-align:center;
+  transition:0.3s;
+}
+.card:hover{
+  transform:translateY(-5px);
 }
 
 /* TESTIMONIAL */
 .testimonial{
-  background:#2563eb;
-  color:white;
-  padding:30px;
+  background:#f1f5f9;
+  padding:25px;
   border-radius:10px;
 }
 
 /* CTA */
 .cta{
-  background:#1e3a8a;
+  background:#2563eb;
   color:white;
   text-align:center;
   padding:50px;
@@ -124,9 +132,9 @@ footer{
 
 <!-- HERO -->
 <div class="hero">
-  <h1>Affordable & Quality Tutoring</h1>
-  <p>Grades 8–12 Coaching in Bangalore</p>
-  <a class="btn" href="#contact">Contact Us</a>
+  <h1>Top Coaching Center in Bangalore</h1>
+  <p>Affordable & Quality Tutoring for Grades 8–12</p>
+  <a class="btn" href="#contact">Enroll Now</a>
 </div>
 
 <!-- SERVICES -->
