@@ -18,6 +18,7 @@
             line-height: 1.6;
             color: #333;
             background: #ffffff;
+            overflow-x: hidden;
         }
 
         .container {
@@ -60,6 +61,7 @@
             color: #333;
             font-weight: 500;
             transition: color 0.3s;
+            cursor: pointer;
         }
 
         .nav-links a:hover {
@@ -70,13 +72,14 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: #333;
         }
 
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #4a90e2 0%, #7b68ee 100%);
             color: white;
-            padding: 120px 0 80px;
+            padding: 140px 0 80px;
             text-align: center;
         }
 
@@ -98,7 +101,7 @@
         .btn {
             display: inline-block;
             padding: 14px 30px;
-            margin: 0 10px;
+            margin: 0 10px 10px 0;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
@@ -144,16 +147,7 @@
             margin-bottom: 2rem;
         }
 
-        /* About */
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        /* Courses & Features */
+        /* Grid Layout */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -163,11 +157,11 @@
 
         .card {
             background: #fff;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
             border-top: 4px solid #4a90e2;
         }
 
@@ -198,14 +192,22 @@
         .faculty-card {
             text-align: center;
             padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
-        .faculty-card img {
+        .faculty-avatar {
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            margin-bottom: 1rem;
-            object-fit: cover;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #4a90e2, #7b68ee);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
         }
 
         /* Testimonials */
@@ -215,12 +217,14 @@
             border-radius: 15px;
             margin-bottom: 2rem;
             font-style: italic;
+            text-align: center;
         }
 
         .testimonial-author {
             font-weight: 600;
             color: #4a90e2;
             margin-top: 1rem;
+            font-style: normal;
         }
 
         /* Contact */
@@ -232,13 +236,13 @@
 
         .contact-item {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
             background: #f8f9ff;
             border-radius: 15px;
         }
 
         .contact-item i {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: #4a90e2;
             margin-bottom: 1rem;
         }
@@ -252,13 +256,18 @@
             font-weight: 600;
             display: inline-block;
             margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background: #20ba5a;
+            transform: translateY(-2px);
         }
 
         /* Dashboard */
         .dashboard {
             background: #f8f9ff;
-            min-height: 100vh;
-            padding: 120px 0 40px;
+            padding: 140px 0 40px;
         }
 
         .dashboard-header {
@@ -267,40 +276,59 @@
         }
 
         .student-name {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #4a90e2;
             margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
         .dashboard-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
 
         .dash-card {
             background: white;
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
 
         .dash-card h3 {
             color: #4a90e2;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
-        .status-green { color: #28a745; }
-        .status-orange { color: #ffc107; }
-        .status-red { color: #dc3545; }
+        .status {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .status-green { 
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-orange { 
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-red { 
+            background: #f8d7da;
+            color: #721c24;
+        }
 
         .progress-bar {
             background: #e9ecef;
-            height: 8px;
-            border-radius: 4px;
+            height: 10px;
+            border-radius: 5px;
             overflow: hidden;
             margin: 1rem 0;
         }
@@ -308,8 +336,15 @@
         .progress-fill {
             height: 100%;
             background: linear-gradient(90deg, #4a90e2, #7b68ee);
-            border-radius: 4px;
-            transition: width 0.3s;
+            border-radius: 5px;
+        }
+
+        .assignment {
+            padding: 1rem;
+            background: #f8f9ff;
+            border-radius: 10px;
+            margin: 0.5rem 0;
+            border-left: 4px solid #4a90e2;
         }
 
         /* Footer */
@@ -317,7 +352,8 @@
             background: #333;
             color: white;
             text-align: center;
-            padding: 2rem 0;
+            padding: 3rem 0;
+            margin-top: 5rem;
         }
 
         /* Mobile Responsiveness */
@@ -331,18 +367,29 @@
             }
 
             .hero {
-                padding: 100px 0 60px;
+                padding: 120px 0 60px;
             }
 
-            .grid, .contact-grid {
+            .grid, .contact-grid, .dashboard-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
             .btn {
                 display: block;
                 margin: 10px auto;
                 max-width: 250px;
+                text-align: center;
             }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -357,6 +404,7 @@
                 <li><a href="#courses">Courses</a></li>
                 <li><a href="#faculty">Faculty</a></li>
                 <li><a href="#features">Features</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#dashboard">Dashboard</a></li>
             </ul>
@@ -382,10 +430,10 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about">
         <div class="container">
             <h2 class="section-title">About Us</h2>
-            <div class="about-content">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 1.8;">
                 <p>At VSS Tutorials, we create a peaceful and supportive coaching environment where every student receives personal attention. Our small batch sizes ensure that no student gets left behind. We focus on building strong conceptual understanding and boosting confidence through individualized learning approaches.</p>
             </div>
         </div>
@@ -422,21 +470,21 @@
             <p class="slogan">Experienced and supportive teachers focused on each student's progress</p>
             <div class="faculty-grid">
                 <div class="faculty-card">
-                    <div style="background: linear-gradient(135deg, #4a90e2, #7b68ee); width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                    <div class="faculty-avatar">
                         <i class="fas fa-user"></i>
                     </div>
                     <h3>Mr. Rajesh Kumar</h3>
                     <p>15+ years experience in Mathematics</p>
                 </div>
                 <div class="faculty-card">
-                    <div style="background: linear-gradient(135deg, #4a90e2, #7b68ee); width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                    <div class="faculty-avatar">
                         <i class="fas fa-user"></i>
                     </div>
                     <h3>Ms. Priya Sharma</h3>
                     <p>Science & Biology Specialist</p>
                 </div>
                 <div class="faculty-card">
-                    <div style="background: linear-gradient(135deg, #4a90e2, #7b68ee); width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                    <div class="faculty-avatar">
                         <i class="fas fa-user"></i>
                     </div>
                     <h3>Mr. Anil Verma</h3>
@@ -454,7 +502,7 @@
                 <div class="card">
                     <i class="fas fa-user-friends"></i>
                     <h3>Individual Attention</h3>
-                    <p>Personalized guidance for every student’s unique learning needs.</p>
+                    <p>Personalized guidance for every student's unique learning needs.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-users"></i>
@@ -518,19 +566,4 @@
                     <h3>WhatsApp</h3>
                     <p>Quick Response</p>
                     <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Message Us
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Student Dashboard -->
-    <section id="dashboard" class="dashboard">
-        <div class="container">
-            <div class="dashboard-header">
-                <h1 class="section-title">Student Dashboard</h1>
-                <div class="student-name">Welcome, Priya Sharma!</div>
-                <p>Class 10 | Roll No: VS001</p>
-            </div>
-            <div class="dashboard
+                        <i class="
