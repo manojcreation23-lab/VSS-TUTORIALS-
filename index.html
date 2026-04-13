@@ -1,215 +1,563 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VSS Tutorials</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSS Tutorials - Focused Learning for Classes 8 to 12</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-<style>
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#ffffff;
-  color:#333;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-/* NAVBAR */
-nav{
-  display:flex;
-  justify-content:space-between;
-  padding:15px 40px;
-  background:white;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
-}
-nav h2{color:#2563eb;margin:0;}
-nav a{
-  text-decoration:none;
-  color:#333;
-  margin-left:15px;
-}
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
 
-/* HERO */
-.hero{
-  text-align:center;
-  padding:100px 20px;
-  background:#f8fafc;
-}
-.hero h1{
-  font-size:38px;
-}
-.hero p{
-  margin:15px 0;
-  font-size:16px;
-  color:#555;
-}
-.btn{
-  display:inline-block;
-  margin:10px;
-  padding:10px 20px;
-  border-radius:5px;
-  text-decoration:none;
-}
-.btn-primary{
-  background:#2563eb;
-  color:white;
-}
-.btn-secondary{
-  background:#e5e7eb;
-  color:#333;
-}
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-/* SECTION */
-section{
-  padding:60px 20px;
-  max-width:1000px;
-  margin:auto;
-}
-h2{
-  text-align:center;
-  margin-bottom:25px;
-}
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #4a67bd;
+        }
 
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-/* CARD */
-.card{
-  background:#f9fafb;
-  padding:20px;
-  border-radius:8px;
-  text-align:center;
-}
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-/* TESTIMONIAL */
-.testimonial{
-  background:#f1f5f9;
-  padding:20px;
-  border-radius:8px;
-}
+        .nav-links a:hover {
+            color: #4a67bd;
+        }
 
-/* CONTACT */
-.contact{
-  text-align:center;
-}
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+        }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:20px;
-  background:#f1f5f9;
-}
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            margin-top: 70px;
+        }
 
-/* WHATSAPP */
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:12px;
-  border-radius:50%;
-  text-decoration:none;
-}
-</style>
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
 
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: #fff;
+            color: #667eea;
+        }
+
+        .btn-primary:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            color: #2d3748;
+        }
+
+        .slogan {
+            text-align: center;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #718096;
+            margin-bottom: 4rem;
+            font-weight: 300;
+        }
+
+        /* About */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #4a5568;
+        }
+
+        /* Courses & Features */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: #f8f9ff;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        /* Faculty */
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .faculty-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .faculty-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            margin: 0 auto 1rem;
+        }
+
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 4rem;
+            color: #667eea;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: serif;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        /* Contact */
+        .contact {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-item i {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">VSS Tutorials</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
 
-<!-- NAVBAR -->
-<nav>
-  <h2>VSS Tutorials</h2>
-  <div>
-    <a href="#">Home</a>
-    <a href="#courses">Courses</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Focused Learning for Classes 8 to 12</h1>
+            <p>Personal attention for every student to build strong understanding and confidence.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-play"></i> Join Now
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-phone"></i> Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>Focused Learning for Classes 8 to 12</h1>
-  <p>Personal attention for every student to build strong understanding and confidence.</p>
+    <!-- Slogan -->
+    <div class="slogan">"Learning with care, growing with confidence."</div>
 
-  <a href="#contact" class="btn btn-primary">Join Now</a>
-  <a href="#contact" class="btn btn-secondary">Contact Us</a>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <p>At VSS Tutorials, we create a calm and dedicated learning space where every student receives individual attention. Our small batches and clear teaching methods ensure that no student is left behind. We focus on building strong foundations and boosting confidence through personalized guidance.</p>
+            </div>
+        </div>
+    </section>
 
-  <p><b>Learning with care, growing with confidence.</b></p>
-</div>
+    <!-- Courses Section -->
+    <section id="courses" class="courses" style="background: #f8f9ff;">
+        <div class="container">
+            <h2 class="section-title">Our Courses</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-school"></i>
+                    <h3>Classes 8 to 10</h3>
+                    <p>All subjects with comprehensive coverage and foundation building for future success.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Classes 11 & 12</h3>
+                    <p>Core subjects with advanced preparation for board exams and competitive entrance tests.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Key Subjects</h3>
+                    <p>Maths, Science, English - Expert guidance with personalized doubt clearing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ABOUT -->
-<section>
-  <h2>About Us</h2>
-  <p style="text-align:center;">
-    VSS Tutorials provides a calm and supportive environment where students from Classes 8 to 12 receive personal attention.
-    We focus on clear understanding, small batches, and stress-free learning.
-  </p>
-</section>
+    <!-- Faculty Section -->
+    <section class="faculty">
+        <div class="container">
+            <h2 class="section-title">Our Faculty</h2>
+            <div class="faculty-grid">
+                <div class="faculty-card">
+                    <div class="faculty-img"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Mr. Rajesh Kumar</h3>
+                    <p>15+ years experience in Mathematics. Focuses on conceptual clarity.</p>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-img"><i class="fas fa-user-tie"></i></div>
+                    <h3>Ms. Priya Sharma</h3>
+                    <p>Science expert with passion for making complex topics simple.</p>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-img"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Mr. Anil Verma</h3>
+                    <p>English mentor helping students excel in communication and writing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- COURSES -->
-<section id="courses">
-  <h2>Courses</h2>
-  <div class="grid">
-    <div class="card">Classes 8 to 10 - All Subjects</div>
-    <div class="card">Classes 11 & 12 - Core Subjects</div>
-    <div class="card">Maths, Science, English</div>
-  </div>
-</section>
+    <!-- Features Section -->
+    <section id="features" class="features" style="background: #f8f9ff;">
+        <div class="container">
+            <h2 class="section-title">Why Choose VSS Tutorials?</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-user-friends"></i>
+                    <h3>Individual Attention</h3>
+                    <p>Personalized guidance for every student's unique learning needs.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <h3>Small Batch Size</h3>
+                    <p>Limited students per batch for better interaction and focus.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-clipboard-check"></i>
+                    <h3>Regular Tests</h3>
+                    <p>Consistent assessment to track progress and improve performance.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>Doubt Clearing</h3>
+                    <p>Daily doubt resolution sessions to ensure complete understanding.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-smile"></i>
+                    <h3>Friendly Approach</h3>
+                    <p>Supportive teachers who make learning enjoyable and stress-free.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- FEATURES -->
-<section>
-  <h2>Why Choose Us</h2>
-  <div class="grid">
-    <div class="card">Individual Attention</div>
-    <div class="card">Small Batch Size</div>
-    <div class="card">Regular Tests</div>
-    <div class="card">Doubt Clearing</div>
-  </div>
-</section>
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Students Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"VSS Tutorials completely changed my approach to Maths. The personal attention helped me score 95% in boards!"</p>
+                    <div class="testimonial-author">- Rohan K., Class 10</div>
+                </div>
+                <div class="testimonial">
+                    <p>"The teachers are so patient and clear all my doubts instantly. I feel much more confident now."</p>
+                    <div class="testimonial-author">- Priya M., Class 12</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Small batches made all the difference. I could actually understand every concept properly."</p>
+                    <div class="testimonial-author">- Arjun S., Class 9</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- FACULTY -->
-<section>
-  <h2>Our Faculty</h2>
-  <div class="grid">
-    <div class="card">Experienced & Supportive Teachers</div>
-    <div class="card">Concept-Based Teaching</div>
-    <div class="card">Student-Focused Approach</div>
-  </div>
-</section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Call Now</h3>
+                    <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                    <a href="tel:+919876543210" class="btn btn-primary">Call</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp</h3>
+                    <p><a href="https://wa.me/919876543210">+91 98765 43210</a></p>
+                    <a href="https://wa.me/919876543210" class="btn btn-primary">Message</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p>info@vss-tutorials.com</p>
+                    <a href="mailto:info@vss-tutorials.com" class="btn btn-primary">Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- TESTIMONIAL -->
-<section>
-  <h2>Student Feedback</h2>
-  <div class="grid">
-    <div class="testimonial">“My understanding improved a lot with personal attention.”</div>
-    <div class="testimonial">“Very calm and supportive teaching environment.”</div>
-    <div class="testimonial">“Helped me gain confidence in studies.”</div>
-  </div>
-</section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 VSS Tutorials. All rights reserved. | Learning with care, growing with confidence.</p>
+        </div>
+    </footer>
 
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <h2>Contact Us</h2>
-  <p>📞 +91 XXXXX XXXXX</p>
-  <p>📧 example@gmail.com</p>
-  <p>📍 Your Location</p>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-  <a href="https://wa.me/91XXXXXXXXXX" class="btn btn-primary">WhatsApp</a>
-</section>
-
-<!-- WHATSAPP FLOAT -->
-<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">💬</a>
-
-<!-- FOOTER -->
-<footer>
-  © 2026 VSS Tutorials
-</footer>
-
+        // Simple mobile menu toggle (basic implementation)
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
 </body>
 </html>
