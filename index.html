@@ -1,147 +1,447 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VSS Tutorials</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  color:white;
-}
-
-/* NAVBAR */
-nav{
-  position:absolute;
-  top:20px;
-  left:50%;
-  transform:translateX(-50%);
-  background:white;
-  padding:10px 25px;
-  border-radius:30px;
-  display:flex;
-  align-items:center;
-  gap:20px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
-nav h2{
-  color:#111;
-  margin:0;
-  font-size:16px;
-}
-nav .menu{
-  margin-left:20px;
-  font-size:20px;
-  color:#333;
-}
-
-/* HERO */
-.hero{
-  height:100vh;
-  background:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644') center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  padding:0 80px;
-  position:relative;
-}
-
-/* OVERLAY */
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.4);
-}
-
-/* CONTENT */
-.hero-content{
-  position:relative;
-  max-width:600px;
-}
-
-.hero h1{
-  font-size:55px;
-  line-height:1.2;
-  margin-bottom:20px;
-}
-
-.hero p{
-  font-size:18px;
-  margin-bottom:25px;
-}
-
-/* BUTTONS */
-.buttons{
-  display:flex;
-  gap:15px;
-}
-
-.btn{
-  padding:12px 25px;
-  border-radius:25px;
-  text-decoration:none;
-  font-weight:500;
-}
-
-.btn-primary{
-  background:#2563eb;
-  color:white;
-}
-
-.btn-secondary{
-  background:white;
-  color:#333;
-}
-
-/* TRUST */
-.trust{
-  margin-top:25px;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-size:14px;
-}
-
-.trust img{
-  width:30px;
-  height:30px;
-  border-radius:50%;
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSS Tutorials - Top Coaching Center in Bangalore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e40af;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #1e40af;
+        }
+        .cta-btn {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+        }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .hero-buttons .btn-primary {
+            background: white;
+            color: #1e40af;
+            padding: 1rem 2.5rem;
+        }
+        .hero-buttons .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 1rem 2.5rem;
+        }
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 3rem;
+        }
+        /* About */
+        .about {
+            background: #f8fafc;
+        }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        /* Courses & Features */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .card i {
+            font-size: 3rem;
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+        /* Faculty */
+        .faculty {
+            background: #f8fafc;
+        }
+        /* Testimonials */
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+        }
+        .author {
+            font-weight: 600;
+            color: #1e40af;
+            margin-top: 1rem;
+        }
+        /* Contact */
+        .contact {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            text-align: center;
+        }
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .contact-item i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .whatsapp-btn, .call-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0.5rem;
+        }
+        .call-btn {
+            background: #10b981;
+        }
+        /* Footer */
+        footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">VSS Tutorials</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#faculty">Faculty</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-btn">Enroll Now</a>
+        </nav>
+    </header>
 
-<!-- NAVBAR -->
-<nav>
-  <h2>VSS Tutorials</h2>
-  <div class="menu">☰</div>
-</nav>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Top Coaching Center in Bangalore for Grades 8–12</h1>
+            <p>Build strong concepts, score higher, and achieve your academic goals.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-btn btn-primary">Enroll Now</a>
+                <a href="#contact" class="cta-btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-content">
-    <h1>Top Coaching Center in Bangalore for Grades 8–12</h1>
-    <p>Build strong concepts, score higher, and achieve your academic goals.</p>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About VSS Tutorials</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Affordable & High-Quality Coaching</h3>
+                    <p>VSS Tutorials is Bangalore's premier coaching center offering personalized education for Grades 8-12. Our experienced teachers focus on building strong fundamentals that lead to academic excellence and long-term success.</p>
+                    <p>With small batch sizes and proven teaching methods, we ensure every student gets the attention they deserve to excel in board exams and competitive tests.</p>
+                </div>
+                <div style="text-align: center;">
+                    <i class="fas fa-graduation-cap" style="font-size: 8rem; color: #1e40af; opacity: 0.8;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="buttons">
-      <a href="#" class="btn btn-primary">Enroll Now</a>
-      <a href="#" class="btn btn-secondary">Contact Us</a>
-    </div>
+    <!-- Courses Section -->
+    <section id="courses">
+        <div class="container">
+            <h2 class="section-title">Our Courses</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-school"></i>
+                    <h3>8th to 10th Tuition</h3>
+                    <p>Foundation building for CBSE/ICSE students with focus on Maths, Science & English.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>PU (11th & 12th) Coaching</h3>
+                    <p>Comprehensive preparation for PUC exams with expert guidance in all major subjects.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-book"></i>
+                    <h3>Subject-Specific Classes</h3>
+                    <p>Specialized coaching in Maths, Science, and English by domain experts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="trust">
-      <img src="https://randomuser.me/api/portraits/men/1.jpg">
-      <img src="https://randomuser.me/api/portraits/women/2.jpg">
-      <img src="https://randomuser.me/api/portraits/men/3.jpg">
-      <span>Trusted by 500+ students</span>
-    </div>
-  </div>
-</div>
+    <!-- Faculty Section -->
+    <section id="faculty" class="faculty">
+        <div class="container">
+            <h2 class="section-title">Our Expert Faculty</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Experienced Teachers</h3>
+                    <p>20+ years of teaching experience with proven track record of student success.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <h3>Personalized Attention</h3>
+                    <p>Small batch sizes ensure individual focus and doubt clarification.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Strong Subject Expertise</h3>
+                    <p>Deep conceptual understanding taught through innovative methods.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Features Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Why Choose VSS Tutorials?</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-users" style="color: #10b981;"></i>
+                    <h3>Small Batch Size</h3>
+                    <p>Maximum 15 students per batch for better learning.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-eye" style="color: #f59e0b;"></i>
+                    <h3>Personal Attention</h3>
+                    <p>Individual mentoring and progress monitoring.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-clipboard-check" style="color: #ef4444;"></i>
+                    <h3>Weekly Tests</h3>
+                    <p>Regular assessments with detailed performance analysis.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chart-line" style="color: #8b5cf6;"></i>
+                    <h3>Progress Tracking</h3>
+                    <p>Parent-teacher meetings and digital progress reports.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-compass" style="color: #06b6d4;"></i>
+                    <h3>Career Guidance</h3>
+                    <p>Expert advice for stream selection and future planning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section style="background: #f8fafc;">
+        <div class="container">
+            <h2 class="section-title">What Students Say</h2>
+            <div class="grid">
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"My Maths scores improved from 65% to 92% in just 6 months. Best decision!"</p>
+                    <div class="author">- Priya S., Class 10</div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Personal attention made all the difference. Teachers are very dedicated."</p>
+                    <div class="author">- Ramesh K., Parent</div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"PU coaching was excellent. Scored 95% in Physics thanks to VSS!"</p>
+                    <div class="author">- Arjun M., PU Student</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Get In Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>+91 98765 43210</h3>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>info@vss-tutorials.com</h3>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Bangalore, Karnataka<br>India 560001</h3>
+                </div>
+            </div>
+            <a href="tel:+919876543210" class="call-btn"><i class="fas fa-phone"></i> Call Now</a>
+            <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 VSS Tutorials. All rights reserved. | Bangalore's Best Coaching Center</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            document.querySelector('header').style.background = window.scrollY > 100 ? 'rgba(255,255,255,0.95)' : 'white';
+        });
+    </script>
 </body>
 </html>
