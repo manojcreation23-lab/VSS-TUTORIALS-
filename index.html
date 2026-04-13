@@ -5,114 +5,111 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VSS Tutorials</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 body{
   margin:0;
-  font-family:Arial;
-  background:#ffffff;
-  color:#333;
+  font-family:'Poppins',sans-serif;
+  color:white;
 }
 
 /* NAVBAR */
 nav{
-  display:flex;
-  justify-content:space-between;
-  padding:15px 30px;
+  position:absolute;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
   background:white;
-  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+  padding:10px 25px;
+  border-radius:30px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
-nav h2{color:#2563eb;margin:0;}
-nav a{text-decoration:none;color:#333;margin:0 10px;}
+nav h2{
+  color:#111;
+  margin:0;
+  font-size:16px;
+}
+nav .menu{
+  margin-left:20px;
+  font-size:20px;
+  color:#333;
+}
 
 /* HERO */
 .hero{
-  background:linear-gradient(135deg,#2563eb,#3b82f6);
-  color:white;
-  text-align:center;
-  padding:120px 20px;
+  height:100vh;
+  background:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  padding:0 80px;
+  position:relative;
 }
-.hero h1{font-size:45px;margin:0;}
-.hero p{font-size:18px;margin:15px 0;}
+
+/* OVERLAY */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.4);
+}
+
+/* CONTENT */
+.hero-content{
+  position:relative;
+  max-width:600px;
+}
+
+.hero h1{
+  font-size:55px;
+  line-height:1.2;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:18px;
+  margin-bottom:25px;
+}
+
+/* BUTTONS */
+.buttons{
+  display:flex;
+  gap:15px;
+}
 
 .btn{
-  background:white;
-  color:#2563eb;
   padding:12px 25px;
-  border-radius:6px;
+  border-radius:25px;
   text-decoration:none;
-  font-weight:bold;
+  font-weight:500;
 }
 
-/* SECTION */
-section{
-  padding:60px 20px;
-  max-width:1100px;
-  margin:auto;
-}
-
-h2{
-  text-align:center;
-  margin-bottom:30px;
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-/* CARD */
-.card{
-  background:white;
-  padding:25px;
-  border-radius:12px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.08);
-  text-align:center;
-  transition:0.3s;
-}
-.card:hover{
-  transform:translateY(-5px);
-}
-
-/* TESTIMONIAL */
-.testimonial{
-  background:#f1f5f9;
-  padding:25px;
-  border-radius:10px;
-}
-
-/* CTA */
-.cta{
+.btn-primary{
   background:#2563eb;
   color:white;
-  text-align:center;
-  padding:50px;
 }
 
-/* CONTACT */
-.contact{
-  text-align:center;
+.btn-secondary{
+  background:white;
+  color:#333;
 }
 
-/* WHATSAPP */
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  padding:15px;
+/* TRUST */
+.trust{
+  margin-top:25px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+}
+
+.trust img{
+  width:30px;
+  height:30px;
   border-radius:50%;
-  color:white;
-  text-decoration:none;
-}
-
-/* FOOTER */
-footer{
-  background:#111827;
-  color:white;
-  text-align:center;
-  padding:20px;
 }
 </style>
 
@@ -123,80 +120,28 @@ footer{
 <!-- NAVBAR -->
 <nav>
   <h2>VSS Tutorials</h2>
-  <div>
-    <a href="#">Home</a>
-    <a href="#">Classes</a>
-    <a href="#">Contact</a>
-  </div>
+  <div class="menu">☰</div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <h1>Top Coaching Center in Bangalore</h1>
-  <p>Affordable & Quality Tutoring for Grades 8–12</p>
-  <a class="btn" href="#contact">Enroll Now</a>
+  <div class="hero-content">
+    <h1>Top Coaching Center in Bangalore for Grades 8–12</h1>
+    <p>Build strong concepts, score higher, and achieve your academic goals.</p>
+
+    <div class="buttons">
+      <a href="#" class="btn btn-primary">Enroll Now</a>
+      <a href="#" class="btn btn-secondary">Contact Us</a>
+    </div>
+
+    <div class="trust">
+      <img src="https://randomuser.me/api/portraits/men/1.jpg">
+      <img src="https://randomuser.me/api/portraits/women/2.jpg">
+      <img src="https://randomuser.me/api/portraits/men/3.jpg">
+      <span>Trusted by 500+ students</span>
+    </div>
+  </div>
 </div>
-
-<!-- SERVICES -->
-<section>
-  <h2>Our Services</h2>
-  <div class="grid">
-    <div class="card">Personalised Academic Support</div>
-    <div class="card">All Core Subjects</div>
-    <div class="card">Regular Assessments</div>
-    <div class="card">Career Guidance</div>
-  </div>
-</section>
-
-<!-- FACULTY -->
-<section>
-  <h2>Our Faculty</h2>
-  <div class="grid">
-    <div class="card">Rajesh Kumar - Maths</div>
-    <div class="card">Priya Sharma - Science</div>
-    <div class="card">Arjun Reddy - English</div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section>
-  <h2>Student Success</h2>
-  <div class="grid">
-    <div class="testimonial">“Great improvement in Maths & English!”</div>
-    <div class="testimonial">“Best tuition with personal attention.”</div>
-    <div class="testimonial">“Affordable and effective coaching.”</div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section>
-  <h2>About Us</h2>
-  <p style="text-align:center;">
-    VSS Tutorials provides high-quality education for Grades 8–12 with experienced teachers and affordable fees.
-  </p>
-</section>
-
-<!-- CTA -->
-<div class="cta">
-  <h2>Your Child’s Future is Safe With Us</h2>
-  <p>Enroll now and build a strong foundation</p>
-</div>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <h2>Contact Us</h2>
-  <p>📍 Bangalore, Karnataka</p>
-  <p>📞 +91 XXXXX XXXXX</p>
-  <p>📧 example@gmail.com</p>
-</section>
-
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">💬</a>
-
-<!-- FOOTER -->
-<footer>
-  © 2026 VSS Tutorials
-</footer>
 
 </body>
 </html>
