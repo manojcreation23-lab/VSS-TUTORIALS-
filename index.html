@@ -3,445 +3,472 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VSS Tutorials - Top Coaching Center in Bangalore</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>VSS Tutorials | India's Best Coaching for Grades 8-12 | Bangalore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #64748b;
+            --accent: #f1f5f9;
+            --white: #ffffff;
+            --dark: #0f172a;
+            --success: #10b981;
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            overflow-x: hidden;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
         /* Header */
-        header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        .header {
             position: fixed;
-            width: 100%;
             top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(20px);
             z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
-        nav {
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem 0;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding-left: 24px;
+            padding-right: 24px;
         }
         .logo {
             font-size: 1.8rem;
-            font-weight: 700;
-            color: #1e40af;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
+            align-items: center;
         }
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: var(--dark);
             font-weight: 500;
-            transition: color 0.3s;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
         }
         .nav-links a:hover {
-            color: #1e40af;
+            color: var(--primary);
         }
-        .cta-btn {
-            background: linear-gradient(135deg, #1e40af, #3b82f6);
+        .header-btn {
+            background: linear-gradient(135deg, var(--primary), #3b82f6);
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 12px 28px;
             border: none;
             border-radius: 50px;
             font-weight: 600;
+            font-size: 0.9rem;
             cursor: pointer;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
             text-decoration: none;
-            display: inline-block;
+            box-shadow: 0 4px 15px rgba(37,99,235,0.4);
         }
-        .cta-btn:hover {
+        .header-btn:hover {
             transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37,99,235,0.5);
         }
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-            color: white;
-            padding: 120px 0 80px;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-        .hero-buttons {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
         }
-        .hero-buttons .btn-primary {
-            background: white;
-            color: #1e40af;
-            padding: 1rem 2.5rem;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="300" cy="300" r="200" fill="url(%23a)"><animate attributeName="r" values="200;250;200" dur="4s" repeatCount="indefinite"/></circle><circle cx="700" cy="700" r="150" fill="url(%23a)"><animate attributeName="r" values="150;200;150" dur="5s" repeatCount="indefinite"/></circle></svg>');
+            animation: float 6s ease-in-out infinite;
         }
-        .hero-buttons .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-            padding: 1rem 2.5rem;
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
-        /* Section Styles */
-        section {
-            padding: 80px 0;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #1e40af;
-            margin-bottom: 3rem;
-        }
-        /* About */
-        .about {
-            background: #f8fafc;
-        }
-        .about-content {
+        .hero-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
+            z-index: 2;
+            position: relative;
         }
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #1e40af;
-        }
-        .about-text p {
-            font-size: 1.1rem;
+        .hero-text h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
             margin-bottom: 1.5rem;
-            color: #666;
+            background: linear-gradient(135deg, white 0%, #f8fafc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        /* Courses & Features */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        .hero-text p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255,255,255,0.95);
+            font-weight: 400;
         }
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
         }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-        .card i {
-            font-size: 3rem;
-            color: #1e40af;
-            margin-bottom: 1rem;
-        }
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #1e40af;
-        }
-        /* Faculty */
-        .faculty {
-            background: #f8fafc;
-        }
-        /* Testimonials */
-        .testimonial {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        .stars {
-            color: #fbbf24;
-            margin-bottom: 1rem;
-        }
-        .author {
+        .btn-primary {
+            background: linear-gradient(135deg, white 0%, #f1f5f9 100%);
+            color: var(--primary);
+            padding: 18px 36px;
+            border: none;
+            border-radius: 50px;
             font-weight: 600;
-            color: #1e40af;
-            margin-top: 1rem;
-        }
-        /* Contact */
-        .contact {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-            color: white;
-            text-align: center;
-        }
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        .contact-item i {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        .whatsapp-btn, .call-btn {
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(255,255,255,0.3);
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255,255,255,0.4);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 18px 36px;
+            border: 2px solid rgba(255,255,255,0.8);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: white;
+            transform: translateY(-2px);
+        }
+        .hero-image {
+            position: relative;
+            justify-self: end;
+        }
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 30px;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.3);
+        }
+        /* Stats Section */
+        .stats {
+            background: var(--white);
+            padding: 4rem 0;
+            position: relative;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        .stat-item p {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        .section-title {
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+        /* Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+        .card {
+            background: var(--white);
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0,0,0,0.03);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), #3b82f6);
+        }
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+        }
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), #3b82f6);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(37,99,235,0.3);
+        }
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        .card p {
+            color: var(--secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        /* Testimonials */
+        .testimonial-card {
+            background: linear-gradient(135deg, var(--accent), #f8fafc);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+        }
+        .stars {
+            color: #fbbf24;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            font-weight: 400;
+        }
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        /* Contact */
+        .contact-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+            border-radius: 24px;
+            padding: 4rem 2rem;
+            margin: 2rem 0;
+        }
+        .contact-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .whatsapp-btn {
             background: #25D366;
             color: white;
-            padding: 1rem 2rem;
+            padding: 16px 32px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            margin: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(37,211,102,0.4);
         }
         .call-btn {
-            background: #10b981;
+            background: var(--success);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(16,185,129,0.4);
+        }
+        .whatsapp-btn:hover, .call-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }
         /* Footer */
-        footer {
-            background: #1f2937;
+        .footer {
+            background: var(--dark);
             color: white;
+            padding: 4rem 0 2rem;
             text-align: center;
-            padding: 2rem 0;
         }
-        /* Mobile Responsiveness */
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-section h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        /* Mobile */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-            .about-content {
+            .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 2rem;
             }
             .hero-buttons {
-                flex-direction: column;
-                align-items: center;
+                justify-content: center;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <nav class="container">
+    <header class="header">
+        <div class="nav-container">
             <div class="logo">VSS Tutorials</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#courses">Courses</a></li>
-                <li><a href="#faculty">Faculty</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="#contact" class="cta-btn">Enroll Now</a>
-        </nav>
+            <a href="#contact" class="header-btn">Enroll Now <i class="fas fa-arrow-right ml-2"></i></a>
+        </div>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <h1>Top Coaching Center in Bangalore for Grades 8–12</h1>
-            <p>Build strong concepts, score higher, and achieve your academic goals.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="cta-btn btn-primary">Enroll Now</a>
-                <a href="#contact" class="cta-btn btn-secondary">Contact Us</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About VSS Tutorials</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Affordable & High-Quality Coaching</h3>
-                    <p>VSS Tutorials is Bangalore's premier coaching center offering personalized education for Grades 8-12. Our experienced teachers focus on building strong fundamentals that lead to academic excellence and long-term success.</p>
-                    <p>With small batch sizes and proven teaching methods, we ensure every student gets the attention they deserve to excel in board exams and competitive tests.</p>
-                </div>
-                <div style="text-align: center;">
-                    <i class="fas fa-graduation-cap" style="font-size: 8rem; color: #1e40af; opacity: 0.8;"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Courses Section -->
-    <section id="courses">
-        <div class="container">
-            <h2 class="section-title">Our Courses</h2>
-            <div class="grid">
-                <div class="card">
-                    <i class="fas fa-school"></i>
-                    <h3>8th to 10th Tuition</h3>
-                    <p>Foundation building for CBSE/ICSE students with focus on Maths, Science & English.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>PU (11th & 12th) Coaching</h3>
-                    <p>Comprehensive preparation for PUC exams with expert guidance in all major subjects.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>Subject-Specific Classes</h3>
-                    <p>Specialized coaching in Maths, Science, and English by domain experts.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Faculty Section -->
-    <section id="faculty" class="faculty">
-        <div class="container">
-            <h2 class="section-title">Our Expert Faculty</h2>
-            <div class="grid">
-                <div class="card">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <h3>Experienced Teachers</h3>
-                    <p>20+ years of teaching experience with proven track record of student success.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-users"></i>
-                    <h3>Personalized Attention</h3>
-                    <p>Small batch sizes ensure individual focus and doubt clarification.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-brain"></i>
-                    <h3>Strong Subject Expertise</h3>
-                    <p>Deep conceptual understanding taught through innovative methods.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section>
-        <div class="container">
-            <h2 class="section-title">Why Choose VSS Tutorials?</h2>
-            <div class="grid">
-                <div class="card">
-                    <i class="fas fa-users" style="color: #10b981;"></i>
-                    <h3>Small Batch Size</h3>
-                    <p>Maximum 15 students per batch for better learning.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-eye" style="color: #f59e0b;"></i>
-                    <h3>Personal Attention</h3>
-                    <p>Individual mentoring and progress monitoring.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-clipboard-check" style="color: #ef4444;"></i>
-                    <h3>Weekly Tests</h3>
-                    <p>Regular assessments with detailed performance analysis.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-chart-line" style="color: #8b5cf6;"></i>
-                    <h3>Progress Tracking</h3>
-                    <p>Parent-teacher meetings and digital progress reports.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-compass" style="color: #06b6d4;"></i>
-                    <h3>Career Guidance</h3>
-                    <p>Expert advice for stream selection and future planning.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section style="background: #f8fafc;">
-        <div class="container">
-            <h2 class="section-title">What Students Say</h2>
-            <div class="grid">
-                <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <div class="hero-content" data-aos="fade-up">
+                <div class="hero-text">
+                    <h1>Top Coaching Center in<br><span style="background: linear-gradient(135deg, white 0%, #f0f9ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Bangalore</span><br>for Grades 8–12</h1>
+                    <p>Build strong concepts, score 95%+, and achieve your academic dreams with India's best educators.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn-primary">
+                            <i class="fas fa-play"></i> Start Free Trial
+                        </a>
+                        <a href="#about" class="btn-secondary">
+                            <i class="fas fa-phone"></i> Talk to Expert
+                        </a>
                     </div>
-                    <p>"My Maths scores improved from 65% to 92% in just 6 months. Best decision!"</p>
-                    <div class="author">- Priya S., Class 10</div>
                 </div>
-                <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
+                    <div style="width: 500px; height: 500px; background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05)); border-radius: 30px; display: flex; align-items: center; justify-content: center; box-shadow: 0 50px 100px rgba(0,0,0,0.3);">
+                        <i class="fas fa-graduation-cap" style="font-size: 8rem; color: rgba(255,255,255,0.8);"></i>
                     </div>
-                    <p>"Personal attention made all the difference. Teachers are very dedicated."</p>
-                    <div class="author">- Ramesh K., Parent</div>
-                </div>
-                <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p>"PU coaching was excellent. Scored 95% in Physics thanks to VSS!"</p>
-                    <div class="author">- Arjun M., PU Student</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Stats -->
+    <section class="stats">
         <div class="container">
-            <h2 class="section-title" style="color: white;">Get In Touch</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <h3>+91 98765 43210</h3>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <h3>info@vss-tutorials.com</h3>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Bangalore, Karnataka<br>India 560001</h3>
-                </div>
-            </div>
-            <a href="tel:+919876543210" class="call-btn"><i class="fas fa-phone"></i> Call Now</a>
-            <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 VSS Tutorials. All rights reserved. | Bangalore's Best Coaching Center</p>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            document.querySelector('header').style.background = window.scrollY > 100 ? 'rgba(255,255,255,0.95)' : 'white';
-        });
-    </script>
-</body>
-</html>
+            <div class="stats-grid">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                    <h3 data-target="5000">0</h3>
+                    <p>Happy Students</p>
