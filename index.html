@@ -3,174 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Agarwal Bhavan - Best Vegetarian Restaurant in Bengaluru</title>
-    <meta name="description" content="New Agarwal Bhavan: Rated 4.1⭐ (4,382 reviews). Pure Veg North Indian & South Indian. ₹200–400/person. Dine-in, Takeaway, Delivery. Tumkur Rd, Bengaluru.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>New Agarwal Bhavan | 4.1⭐ Bengaluru's Best Pure Veg (4,382+ Reviews)</title>
+    <meta name="description" content="New Agarwal Bhavan - Rated 4.1⭐ (4,382 reviews). North Indian, South Indian Pure Veg. ₹200-400/person. Dine-in, Takeaway, Delivery. Tumkur Road, Bengaluru. Open till 10PM.">
+    <meta property="og:title" content="New Agarwal Bhavan - Pure Veg Excellence">
+    <meta property="og:description" content="4.1⭐ (4,382 reviews) - Bengaluru's favorite vegetarian restaurant">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/8B4513/FFF?text=New+Agarwal+Bhavan">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "New Agarwal Bhavan",
+        "image": "https://via.placeholder.com/1200x630/8B4513/FFF?text=New+Agarwal+Bhavan",
+        "telephone": "09901974558",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "630, Tumkur Rd, Chokkasandra",
+            "addressLocality": "T. Dasarahalli",
+            "addressRegion": "Karnataka",
+            "postalCode": "560057",
+            "addressCountry": "IN"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 13.038,
+            "longitude": 77.512
+        },
+        "priceRange": "₹₹",
+        "servesCuisine": "Indian, Vegetarian",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.1",
+            "reviewCount": "4382"
+        },
+        "openingHours": "Mo-Su 06:00-22:00",
+        "sameAs": ["https://www.google.com/maps/place/New+Agarwal+Bhavan"]
+    }
+    </script>
     <style>
         :root {
-            --primary: #d4a017; /* Gold for Indian theme */
-            --secondary: #8b4513;
-            --bg: #fffaf0;
-            --text: #333;
-            --shadow: 0 4px 20px rgba(0,0,0,0.1);
+            --gold: #D4A017; --brown: #8B4513; --cream: #FFF8DC; --dark: #1F2937;
+            --shadow-lg: 0 25px 50px -12px rgba(0,0,0,0.25); --shadow-xl: 0 35px 60px -12px rgba(0,0,0,0.3);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        body { 
+            font-family: 'Poppins', sans-serif; line-height: 1.7; color: var(--dark); 
+            overflow-x: hidden; background: linear-gradient(135deg, var(--cream) 0%, #FDF6E3 100%);
+        }
+        .glass { backdrop-filter: blur(20px); background: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.2); }
+        .gradient-gold { background: linear-gradient(135deg, var(--gold) 0%, #F4B400 100%); }
+        .gradient-brown { background: linear-gradient(135deg, var(--brown) 0%, #A0522D 100%); }
         
         /* Header */
-        header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow); }
-        .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .logo { font-size: 2rem; font-weight: bold; }
-        .contact { display: flex; gap: 1rem; align-items: center; }
-        .rating { background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; }
+        .header { position: fixed; top: 0; width: 100%; z-index: 1000; backdrop-filter: blur(20px); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .header.scrolled { box-shadow: var(--shadow-lg); }
+        .nav-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo { font-size: 1.8rem; font-weight: 700; background: linear-gradient(135deg, white, rgba(255,255,255,0.8)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: var(--dark); text-decoration: none; font-weight: 500; position: relative; transition: color 0.3s; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--gold); transition: width 0.3s; }
+        .nav-links a:hover::after { width: 100%; }
+        .cta-primary { background: var(--gold); color: white; padding: 0.75rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; box-shadow: 0 10px 30px rgba(212,160,23,0.4); transition: all 0.3s; }
+        .cta-primary:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(212,160,23,0.6); }
         
         /* Hero */
-        .hero { background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI0MDAiIHZpZXdCb3g9IjAgMCAxMjAwIDQwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGVsbGlwc2UgY3g9IjYwMCIgY3k9IjIwMCIgcng9IjYwMCIgcnk9IjIwMCIgZmlsbD0iI2Q0YTAxNyIvPgo8L3N2Zz4K') center/cover no-repeat; height: 400px; display: flex; align-items: center; justify-content: center; text-align: center; color: white; position: relative; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); }
-        .hero-content { position: relative; z-index: 2; max-width: 800px; }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
-        .price { font-size: 1.5rem; margin-bottom: 1rem; }
-        .cta { background: var(--primary); color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-size: 1.2rem; cursor: pointer; transition: transform 0.3s; }
-        .cta:hover { transform: scale(1.05); }
+        .hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 20%, rgba(212,160,23,0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(139,69,19,0.1) 0%, transparent 50%); }
+        .hero-content { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; z-index: 2; }
+        .hero-text h1 { font-size: clamp(3rem, 8vw, 6rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; background: linear-gradient(135deg, var(--gold) 0%, var(--brown) 50%, #654321 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .stats { display: flex; gap: 3rem; margin: 2rem 0; }
+        .stat { text-align: center; }
+        .stat-number { font-size: 3rem; font-weight: 800; color: var(--gold); }
+        .hero-image { position: relative; }
+        .hero-image img { width: 100%; border-radius: 2rem; box-shadow: var(--shadow-xl); transform: rotate(-5deg); }
+        
+        /* Cards */
+        .card { background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); border-radius: 24px; padding: 2.5rem; box-shadow: var(--shadow-lg); border: 1px solid rgba(255,255,255,0.2); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--gold), var(--brown)); }
+        .card:hover { transform: translateY(-12px) scale(1.02); box-shadow: var(--shadow-xl); }
         
         /* Sections */
-        section { padding: 4rem 0; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .card { background: white; border-radius: 20px; padding: 2rem; box-shadow: var(--shadow); transition: transform 0.3s; }
-        .card:hover { transform: translateY(-10px); }
-        .icon { font-size: 3rem; color: var(--primary); margin-bottom: 1rem; }
+        section { padding: 8rem 0; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-header h2 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 1rem; background: linear-gradient(135deg, var(--gold), var(--brown)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
         
         /* Menu */
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-        .menu-item { text-align: center; }
-        .menu-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px; }
+        .menu-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .menu-card { text-align: center; }
+        .menu-image { height: 220px; border-radius: 20px; overflow: hidden; margin-bottom: 1.5rem; box-shadow: var(--shadow-lg); }
+        .menu-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .menu-card:hover .menu-image img { transform: scale(1.1); }
         
         /* Reviews */
-        .review { background: #f8f9fa; padding: 1.5rem; border-radius: 15px; margin-bottom: 1rem; }
-        .stars { color: #ffc107; }
+        .review-card { position: relative; }
+        .review-avatar { width: 50px; height: 50px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 1rem; }
+        .stars { color: #F4B400; font-size: 1.2rem; margin-bottom: 0.5rem; }
+        
+        /* Floating CTA */
+        .floating-cta { position: fixed; bottom: 2rem; right: 2rem; width: 60px; height: 60px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 40px rgba(212,160,23,0.4); z-index: 1000; cursor: pointer; transition: all 0.3s; }
+        .floating-cta:hover { transform: scale(1.1); box-shadow: 0 25px 50px rgba(212,160,23,0.6); }
         
         /* Footer */
-        footer { background: var(--secondary); color: white; text-align: center; padding: 2rem 0; }
+        footer { background: var(--gradient-brown); color: white; padding: 4rem 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+        .footer-link { color: rgba(255,255,255,0.8); text-decoration: none; display: block; margin-bottom: 0.5rem; transition: color 0.3s; }
+        .footer-link:hover { color: white; }
+        
+        /* Animations */
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        .float { animation: float 3s ease-in-out infinite; }
         
         /* Mobile */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .header-content { flex-direction: column; gap: 1rem; text-align: center; }
+            .nav-links { display: none; }
+            .hero-content { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+            .stats { justify-content: center; flex-wrap: wrap; }
+            section { padding: 4rem 0; }
         }
-        
-        /* Animations */
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .card { animation: fadeIn 0.6s ease forwards; }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">ನವ ಅಗರ್ವಾಲ್ ಭವನ <br> <small>New Agarwal Bhavan</small></div>
-                <div class="contact">
-                    <div class="rating">⭐ 4.1 (4,382 Reviews)</div>
-                    <a href="tel:09901974558" style="color:white;"><i class="fas fa-phone"></i> 099019 74558</a>
-                </div>
-            </div>
+    <!-- Header -->
+    <header class="header glass">
+        <div class="nav-container">
+            <div class="logo">ನವ ಅಗರ್ವಾಲ್ ಭವನ <span style="font-size: 0.8em; font-weight: 400;">New Agarwal Bhavan</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="tel:09901974558" class="cta-primary">Call Now</a>
         </div>
     </header>
 
-    <section class="hero">
+    <!-- Hero -->
+    <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Pure Vegetarian Bliss</h1>
-            <div class="price">₹200–400 per person</div>
-            <p>Vegetarian Restaurant | Dine-in · Takeaway · No-contact Delivery</p>
-            <button class="cta" onclick="orderNow()">Order Online Now</button>
+            <div class="hero-text">
+                <h1>Bengaluru's Pure Veg<br><span class="gradient-gold" style="-webkit-background-clip: text; -webkit-text-fill-color: transparent;">Excellence</span></h1>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">4.1⭐</div>
+                        <div>4,382 Reviews</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">₹200-400</div>
+                        <div>Per Person</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">Open</div>
+                        <div>Till 10PM</div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
+                    <a href="tel:09901974558" class="cta-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem;">📞 Order Now</a>
+                    <a href="#menu" class="cta-primary glass" style="background: transparent; border: 2px solid var(--gold); color: var(--gold);">View Menu</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div style="width: 100%; height: 500px; background: linear-gradient(135deg, var(--gold), var(--brown)); border-radius: 2rem; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 20%; left: 10%; width: 80%; height: 60%; background: rgba(255,255,255,0.1); border-radius: 20px; transform: rotate(-3deg);"></div>
+                    <div style="position: absolute; bottom: 10%; right: 10%; width: 60%; height: 40%; background: rgba(255,255,255,0.15); border-radius: 20px;"></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="about" class="container">
-        <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">About Us</h2>
+    <!-- About -->
+    <section class="container">
+        <div class="section-header">
+            <h2>Why Choose Us</h2>
+        </div>
         <div class="grid">
             <div class="card">
-                <i class="fas fa-map-marker-alt icon"></i>
-                <h3>Location</h3>
-                <p>630, Tumkur Rd, Chokkasandra, T. Dasarahalli, Bengaluru, Karnataka 560057</p>
+                <div style="font-size: 4rem; margin-bottom: 1.5rem;">📍</div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--brown);">Prime Location</h3>
+                <p>630, Tumkur Rd, Chokkasandra, T. Dasarahalli, Bengaluru, Karnataka 560057<br><strong>Open:</strong> Daily 6AM - 10PM</p>
             </div>
             <div class="card">
-                <i class="fas fa-clock icon"></i>
-                <h3>Hours</h3>
-                <p>Open now · Closes 10 PM</p>
+                <div style="font-size: 4rem; margin-bottom: 1.5rem;">🍽️</div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--brown);">Pure Vegetarian</h3>
+                <p>North Indian • South Indian • Sweets • Thali<br><strong>Services:</strong> Dine-in, Takeaway, Delivery</p>
             </div>
             <div class="card">
-                <i class="fas fa-utensils icon"></i>
-                <h3>Services</h3>
-                <p>Dine-in · Takeaway · No-contact Delivery</p>
+                <div style="font-size: 4rem; margin-bottom: 1.5rem;">⭐</div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--brown);">Trusted Quality</h3>
+                <p>4.1⭐ from 4,382+ happy customers<br><strong>Average spend:</strong> ₹200-400/person</p>
             </div>
         </div>
     </section>
 
-    <section id="menu" style="background: #f8f9fa;">
+    <!-- Menu -->
+    <section id="menu" style="background: linear-gradient(135deg, #FFF8DC 0%, #FDF2E9 100%);">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">Menu Highlights</h2>
+            <div class="section-header">
+                <h2>Menu Highlights</h2>
+            </div>
             <div class="menu-grid">
-                <div class="menu-item card">
-                    <div style="background: linear-gradient(45deg, #ff6b6b, #ffd93d); height: 200px; border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; margin-bottom: 1rem;">🍅 Masala Papad <br> <small>Popular</small></div>
-                    <h4>Masala Papad</h4>
+                <div class="menu-card card">
+                    <div class="menu-image" style="background: linear-gradient(135deg, #FF6B6B, #FF8E8E); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.8rem; font-weight: 700;">🍅<br>Masala Papad</div>
+                    <h4 style="margin-bottom: 0.5rem;">Masala Papad</h4>
+                    <div class="stars" style="color: #F4B400;">⭐⭐⭐⭐⭐ Popular</div>
                 </div>
-                <div class="menu-item card">
-                    <div style="background: linear-gradient(45deg, #4ecdc4, #44a08d); height: 200px; border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; margin-bottom: 1rem;">🍛 Curry</div>
-                    <h4>Curry</h4>
-                </div>
-                <div class="menu-item card">
-                    <div style="background: linear-gradient(45deg, #ff9ff3, #f368e0); height: 200px; border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; margin-bottom: 1rem;">🍮 Sweets</div>
-                    <h4>Sweets Combo</h4>
-                </div>
-                <div class="menu-item card">
-                    <div style="background: linear-gradient(45deg, #54a0ff, #2e86de); height: 200px; border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; margin-bottom: 1rem;">🥙 Thali</div>
-                    <h4>Thali</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="reviews" class="container">
-        <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">What Customers Say</h2>
-        <div class="grid">
-            <div class="review card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p>"Nice tasty food, awesome service, good restaurant for a meal with family."</p>
-                <small>— Local Guide</small>
-            </div>
-            <div class="review card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p>"A decent hotel in the locality to have good vegetarian food. Amazing crunchy gobi manchurian!"</p>
-                <small>— Nancy Raju</small>
-            </div>
-            <div class="review card">
-                <div class="stars">⭐⭐⭐⭐</div>
-                <p>"This one is rated as good place around this area for veg north Indian dishes."</p>
-                <small>— Recent Visitor</small>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 New Agarwal Bhavan. All rights reserved. | <a href="#" style="color: #ffd700;">Claim this business</a> | 2GR8+P5 Bengaluru</p>
-            <p>Popular for: North Indian, Sweets (145+), Ghee (15+), Masala Dosa (17+)</p>
-        </div>
-    </footer>
-
-    <script>
-        function orderNow() {
-            window.open('https://www.zomato.com/bangalore/new-agarwal-bhavan-chokkasandra' || 'tel:09901974558', '_blank');
-        }
-        
-        // Smooth scroll for sections
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
-</body>
-</html>
+                <div class="menu-card card">
+                    <div class="menu-image" style="background: linear-gradient(135deg, #4ECDC4, #55E6C1);">🍛<br>Curry</div>
+                    <h4>
